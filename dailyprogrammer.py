@@ -8,7 +8,7 @@ def dateConverter(input, output):
     max = datetime.strptime('2049-01-01', '%Y-%m-%d')
     min = datetime.strptime('1950-01-01', '%Y-%m-%d')
     count = 0
-    with open('gistfile1.txt', 'r') as file:
+    with open(input, 'r') as file:
         for line in file:
             for format in ['%Y-%m-%d',
                            '%m/%d/%y',
@@ -38,3 +38,6 @@ def dateConverter(input, output):
         solution.close()
 
 dateConverter ('gistfile1.txt', 'output.txt')
+# break when you see a real one.
+# use exception.
+# leap years?
