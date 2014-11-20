@@ -7,6 +7,7 @@ def dateConverter(input, output):
     solution = open(output, "w")
     max = datetime.strptime('2049-01-01', '%Y-%m-%d')
     min = datetime.strptime('1950-01-01', '%Y-%m-%d')
+    count = 0
     with open('gistfile1.txt', 'r') as file:
         for line in file:
             for format in ['%Y-%m-%d',
@@ -23,16 +24,17 @@ def dateConverter(input, output):
                     elif date < min:
                         date = date + relativedelta(years=100)
                         converted = date.strftime('%Y-%m-%d')+'\n'
+                        print 'never happens'
                     else:
                         converted = date.strftime('%Y-%m-%d')+'\n'
                     print converted
+                    count +=1
                     solution.write(converted)
 
-                except Exception as e:
+                except:
                     pass
 
-
-
+        print count
         solution.close()
 
 dateConverter ('gistfile1.txt', 'output.txt')
