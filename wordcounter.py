@@ -4,7 +4,7 @@ from collections import Counter
 def makeWordList(textFile):
     '''
     Convert all the words to lower case and get rid of punctuations
-    and special characters
+    and special characters and put them all in a list.
     '''
     wordList=[]
     file = open(textFile, 'r')
@@ -13,4 +13,6 @@ def makeWordList(textFile):
     text = re.sub('[^a-z\ \']+', " ", text)
     words = list(text.split())
     return words
+
+#count the list.
 print Counter(makeWordList('pg47498.txt'))
