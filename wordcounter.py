@@ -10,6 +10,8 @@ def makeWordList(textFile):
     file = open(textFile, 'r')
     text = file.read().lower()
     file.close()
+    # replaces anything that is not a lowercase letter, a space, or an
+    # apostrophe with a space.
     text = re.sub('[^a-z\ \']+', " ", text)
     words = list(text.split())
     return words
